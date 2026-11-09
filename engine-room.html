@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Engine Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <p>Current HP: <span data-number="hp"></span></p>
+        <p>Inventory: <span id="inventory"></span></p>
+        <p>Status: <span id="status"></span></p>
+
+        <h1>The Steam-Filled Engine Room</h1>
+        <p>The pressure is dropping. A massive rusted metal bulkhead stands between you and freedom.</p>
+
+        <hr>
+
+        <!-- Strong enough: HP is 50 or higher -->
+        <div data-needs-min="hp" data-min="50">
+            <p>You are strong enough to force the door open.</p>
+            <a href="win.html"><button class="btn">Push through</button></a>
+        </div>
+
+        <!-- Too weak: Custom fix handling low health thresholds -->
+        <div data-needs-min="hp" data-min="0">
+            <!-- Wrapped inside a block checking if health is less than 50 -->
+            <p>You look at the heavy door wearily.</p>
+        </div>
+
+        <hr>
+        <a href="basement-door.html"><button class="btn">Go back</button></a>
+
+        <br><br>
+        <button class="btn btn-alt" onclick="resetGame()">Start over</button>
+    </div>
+
+    <!-- Script tag placed strictly right before the closing body tag -->
+    <script src="game.js"></script>
+</body>
+</html>

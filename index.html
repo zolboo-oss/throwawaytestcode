@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Haunted Mansion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>The Haunted Mansion</h1>
+        <p>Welcome to the multi-page click-through adventure game.</p>
+        
+        <!-- The multi-action Begin button sets up the starting state safely -->
+        <button class="btn" onclick="setNumber('hp', 100); addItem('flashlight'); addStatus('the power is off')">Begin Adventure</button>
+        
+        <hr>
+        
+        <p>Current HP: <span data-number="hp"></span></p>
+        <p>Inventory: <span id="inventory"></span></p>
+        <p>Status: <span id="status"></span></p>
+
+        <h2>The Foyer</h2>
+        <p>You find yourself standing in a chilly, dim entryway. A heavy brass key sits on a nearby side counter.</p>
+        
+        <p>A brass key is sitting on the counter.</p>
+        <button class="btn btn-alt" onclick="addItem('key')">Take the key</button>
+
+        <hr>
+
+        <!-- Navigation Links -->
+        <p>Where would you like to go?</p>
+        <a href="kitchen.html"><button class="btn">Go to the Kitchen</button></a>
+        <a href="basement-door.html"><button class="btn">Go to the Basement Door</button></a>
+
+        <br><br>
+        <button class="btn btn-alt" onclick="resetGame()">Start over</button>
+    </div>
+
+    <!-- Script tag placed strictly right before the closing body tag -->
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Basement Door</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <p>Current HP: <span data-number="hp"></span></p>
+        <p>Inventory: <span id="inventory"></span></p>
+        <p>Status: <span id="status"></span></p>
+
+        <h1>The Old Wooden Door</h1>
+        <p>A reinforced door blocks the way down into the depths of the building.</p>
+
+        <hr>
+
+        <section>
+            <!-- Shows up only if player picked up the key -->
+            <div data-needs="key">
+                <p>The key turns. The basement door swings open.</p>
+                <a href="engine-room.html"><button class="btn">Go down</button></a>
+            </div>
+
+            <!-- Shows up only if the player forgot the key -->
+            <div data-missing="key">
+                <p>The door is locked. You need something to open this.</p>
+            </div>
+
+            <hr>
+            <a href="index.html"><button class="btn">Go back</button></a>
+        </section>
+
+        <br><br>
+        <button class="btn btn-alt" onclick="resetGame()">Start over</button>
+    </div>
+
+    <!-- Script tag placed strictly right before the closing body tag -->
+    <script src="game.js"></script>
+</body>
+</html>

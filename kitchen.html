@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Dusty Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <p>Current HP: <span data-number="hp"></span></p>
+        <p>Inventory: <span id="inventory"></span></p>
+        <p>Status: <span id="status"></span></p>
+
+        <h1>The Dusty Kitchen</h1>
+        <p>Flies buzz around an old sink, and a heavy electrical panel sits on the far wall.</p>
+
+        <!-- Content reacting to statuses -->
+        <div data-status="the power is off">
+            <p>It is too dark in here to read the label on the jar.</p>
+            <button class="btn" onclick="removeStatus('the power is off')">Reset the breaker</button>
+        </div>
+
+        <!-- The panel when the power is turned back on -->
+        <div data-missing="the power is off">
+            <p>The lights hum to life! The labels are readable now, but the wiring panel looks volatile.</p>
+            <p>The wire is sparking. You could try to grab it.</p>
+            <button class="btn" onclick="changeNumber('hp', -25)">Grab the wire</button>
+            <br><br>
+            <button class="btn btn-alt" onclick="addStatus('the power is off')">Pull the breaker</button>
+        </div>
+
+        <hr>
+
+        <p>You spot an old flask of clear liquid on the shelf.</p>
+        <button class="btn" onclick="changeNumber('hp', 15)">Drink the water</button>
+
+        <hr>
+
+        <a href="index.html"><button class="btn">Go back</button></a>
+        
+        <br><br>
+        <button class="btn btn-alt" onclick="resetGame()">Start over</button>
+    </div>
+
+    <!-- Script tag placed strictly right before the closing body tag -->
+    <script src="game.js"></script>
+</body>
+</html>
